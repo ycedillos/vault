@@ -1,0 +1,17 @@
+dist: xenial
+language: bash
+branches:
+  only:
+  - main
+  - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+stages:
+- deployment
+before_install:
+- chmod 764 ci-cd/scripts/deployment.sh
+jobs:
+  include:
+  - stage: deployment
+    if: type IN (push) AND branch IN (main)
+    name: Deployment k8s
+    script:
+    - "./ci-cd/scripts/deployment.sh"
