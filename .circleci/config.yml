@@ -16,6 +16,9 @@ jobs:
           name: Check Scripts
           command: |
             openssl aes-256-cbc -K ${SAMPLE_KEY} -iv ${SAMPLE_IV} -in ci-cd/credentials.tar.gz.enc -out ci-cd/credentials.tar.gz -d
+            DOCKER_IMAGE_NAME=mysample
+            GCP_PROJECT=gcp-project
+            DOCKER_IMAGE_URL=gcr.io/${GCP_PROJECT}/${DOCKER_IMAGE_NAME}
             chmod 764 ci-cd/scripts/deployment.sh
             ./ci-cd/scripts/deployment.sh
 # Invoke jobs via workflows

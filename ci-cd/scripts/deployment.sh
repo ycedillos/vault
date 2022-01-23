@@ -22,10 +22,7 @@
 echo "show docker version"
 docker -v
 
-echo "Show environment variables"
+docker build -f Dockerfile \
+    -t $DOCKER_IMAGE_NAME .
 
-echo ${CIRCLE_REPOSITORY_URL}
-echo ${CIRCLE_SHA1}
-echo ${CIRCLE_PR_NUMBER}
-echo ${CIRCLE_PR_REPONAME}
-echo ${CIRCLE_PROJECT_REPONAME}
+docker tag $DOCKER_IMAGE_NAME $DOCKER_IMAGE_URL:${CIRCLE_BUILD_NUM}
