@@ -16,7 +16,6 @@ jobs:
           name: "Setup custom environment variables"
           command: |
             echo 'export DOCKER_IMAGE_NAME=mysample' >> $BASH_ENV
-            echo 'export GCP_PROJECT=gcp-project' >> $BASH_ENV
             echo 'export DOCKER_IMAGE_URL=gcr.io/${GCP_PROJECT}/${DOCKER_IMAGE_NAME}' >> $BASH_ENV
       - run:
           name: Check Scripts
