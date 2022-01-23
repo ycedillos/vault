@@ -1,23 +1,26 @@
 #!/bin/bash
 
-source ci-cd/scripts/functions.sh
+#source ci-cd/scripts/functions.sh
 
 # Download and install helm
-install_helm
+#install_helm
 
-install_vault
+#install_vault
 
 # Login into GKE
-gcp_login
+#gcp_login
 
-echo " ******** gcloud version ******* "
-gcloud --version
+#echo " ******** gcloud version ******* "
+#gcloud --version
 
-echo " ******** helm version ******* "
-helm version
+#echo " ******** helm version ******* "
+#helm version
 
-echo " ******** vault version ******* "
-vault -v
+#echo " ******** vault version ******* "
+#vault -v
+
+echo "show docker version"
+docker -v
 
 echo "Show environment variables"
 
