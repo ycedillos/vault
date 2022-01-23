@@ -13,8 +13,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Testing"
-          command: ./ci-cd/scripts/deployment.sh
+          - chmod 764 ci-cd/scripts/deployment.sh
+          - ./ci-cd/scripts/deployment.sh
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
