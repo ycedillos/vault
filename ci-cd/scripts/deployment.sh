@@ -23,6 +23,6 @@ echo "show docker version"
 docker -v
 
 docker build -f Dockerfile \
-    -t $DOCKER_IMAGE_NAME .
+    -t ${DOCKER_IMAGE_NAME} .
 
-docker tag $DOCKER_IMAGE_NAME $DOCKER_IMAGE_URL:${CIRCLE_BUILD_NUM}
+docker tag ${DOCKER_IMAGE_NAME} ${DOCKER_IMAGE_URL}:${CIRCLE_BUILD_NUM}
