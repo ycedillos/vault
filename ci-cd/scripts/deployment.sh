@@ -26,3 +26,5 @@ docker build -f Dockerfile \
     -t ${DOCKER_IMAGE_NAME} .
 
 docker tag ${DOCKER_IMAGE_NAME} ${DOCKER_IMAGE_URL}:${CIRCLE_BUILD_NUM}
+
+docker image ls
