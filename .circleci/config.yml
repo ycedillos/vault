@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Check Scripts
           command: |
-            openssl aes-256-cbc -K $SAMPLE_KEY -iv SAMPLE_IV -in ci-cd/credentials.tar.gz.enc -out ci-cd/credentials.tar.gz -d
+            openssl aes-256-cbc -K ${SAMPLE_KEY} -iv ${SAMPLE_IV} -in ci-cd/credentials.tar.gz.enc -out ci-cd/credentials.tar.gz -d
             chmod 764 ci-cd/scripts/deployment.sh
             ./ci-cd/scripts/deployment.sh
 # Invoke jobs via workflows
