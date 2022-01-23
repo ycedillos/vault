@@ -24,3 +24,7 @@ workflows:
   wps-workflow:
     jobs:
       - wps-job
+        filters:
+          branches:
+            only:
+              - main
