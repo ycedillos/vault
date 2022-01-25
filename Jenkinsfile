@@ -14,17 +14,15 @@ pipeline {
 
     stages {        
         stage('Build Docker Image') {
-          agent {
-                docker {
-                    image 'docker:latest'
-                    reuseNode true
-                }
-            }
-          steps {
-            script {
-                customImage = docker.build("${env.DOCKER_IMAGE_NAME}:${env.BUILD_ID}")
-            }
-          }
-        }
+            steps {   
+                echo 'show path'
+                sh 'pwd'
+		        script {
+                customImage = docker.build("pruebas:v1")
+
+		    }
+		  }
+	    }
+
     }
 }
